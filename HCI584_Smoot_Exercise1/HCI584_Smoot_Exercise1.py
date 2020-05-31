@@ -1,6 +1,10 @@
-#Assigment one for HCI 584
-#by James Smoot
-
+print("*********************************************************************************")
+print("****************************  Start Of File *****************************************************")
+''
+print("#Assigment one for HCI 584")
+print("#by James Smoot\n")
+print("*********************************************************************************")
+print("******************************** Part 0 *****************************************\n")
 # part 0
 # This is just a simple example to demonstrate how the start and end
 # breakpoint system works
@@ -10,9 +14,9 @@ print("start of part 0")
 print ("This is the first assigment for this class")
 name = input("What is your Name ")
 print("What's Up", name)
-print("end of 0")
-
-print("****************************************************************************")
+print("end of 0\n")
+print("*********************************************************************************")
+print("****************************** Part 1 *****************************************\n")
 # part 1
 # task:  L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
 # using both, indexing and slicing on L, assemble and print a new list N that contains:
@@ -29,22 +33,12 @@ print("start of part 1") # set breakpoint here
 L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
 print(L)
 # your code
-
-
-print("end of 1") # set breakpoint here 
-print("****************************************************************************")
-
-# solution 2
-L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
-print("L is", L)
-tmp1 = L[0] # 0
-tmp2 = L[2][1] # 2
-tmp3 = L[2][2] # 3
-tmp4 = [L[3][0][0], L[3][1][0]] # [5, 6]
-tmp5 = L[4][0] # 8
-tmp6 = L[4][-1] # 10 
-newL = [tmp1, tmp2, tmp3, tmp4, tmp5, tmp6] # create final list
-print(newL) # [0, 2, 3, [5, 6], 8, 10]
+print("This is the output ----->")
+output = "[{0},{1},{2},[{3},{4}],{5},{6}]".format(L[0], L[2][1], L[2][2], L[3][0][0], L[3][1][0], L[4][0], L[4][2])
+print (output)
+print("end of 1\n") # set breakpoint here 
+print("**************************************************************************************")
+print("*************************** Part 2 *************************************************\n")
 
 
 # part 2
@@ -57,9 +51,16 @@ print(newL) # [0, 2, 3, [5, 6], 8, 10]
 print("start of part 2") # set breakpoint here
 s = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects."
 # your code here
-
-print("end of 2") # set breakpoint here 
-print("****************************************************************************")
+print("s: " + s)
+output2 = s.split('.')
+num2 = len(output2)
+print("There are {0} lines ".format(num2))
+print("This is the output ----->")
+for x in output2:
+    print(x)
+print("end of 2\n") # set breakpoint here 
+print("**********************************************************************************")
+print("**************************** Part 3 **********************************************")
 
 # part 3
 # Task: 
@@ -77,10 +78,19 @@ print("*************************************************************************
 # LANGUAGE
 print("start of part 3") # set breakpoint here
 # your code here
+print ("s: " + s)
+output3 = s.replace(",", "").split(" ")
+count = 0
+for x in output3:    
+    if count % 2 != 0 or count == 0:
+        print(x.upper())
+    else: 
+        print(x)
+    count += 1
 
-
-print("end of 3") # set breakpoint here 
-print("****************************************************************************")
+print("end of 3\n") # set breakpoint here 
+print("*********************************************************************************")
+print("*************************** Part 4 **********************************************")
 
 # part 4
 # task: abbreviate a potentially long string s to have the x first and x last chars with ... in between
@@ -97,8 +107,17 @@ print("*************************************************************************
 # call your function a couple of times with different parameters and also test edge cases
 print("start of part 4") # set breakpoint here
 s = "A very long description" # a long string
+print("s: " + s)
 filler = "..."
 # your code here
-
-
-print("end of 4") # set breakpoint here 
+newString = ""
+for w in range(len(s)) :
+   # print(w)
+   if w < 5 or w > 17:
+        newString += s[w]
+        if w == 4 :
+            newString += filler
+print(newString)
+print("end of 4\n") # set breakpoint here 
+print("*************************************************************************************")
+print("****************************  End Of File *******************************************")
